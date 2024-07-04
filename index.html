@@ -2,37 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project RevoU</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="item1">
-        <div class="logo">
+        <div class="logo"></div>
 
-        </div>
-
-        <nav>
+        <nav class="menu">
             <a href="#home">Home</a>
             <a href="#our-profile">Our Profile</a>
-            <a>Portofolio</a>
-            <a>Message Us</a>
+            <a href="#portofolio">Portofolio</a>
+            <a href="#message-us">Message Us</a>
         </nav>
     </header>
     <hr>
     <main>
         <section id="home">
             <header>
-                <h2>Hi user! Welcome to Website</h2>
+                <h2>Hi <span id="name">user</span>! Welcome to My Website</h2>
             </header>
+            <button id="tombol" class="tombol">Change Name</button>
 
             <article>
-                <p>ini adalah website portofolio saya</p>
+                <h1 class="tour">Unklab Virtual Campus Tour</h1>
 
-                <div class="container"></div>
+                <div class="container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/en7eEJezwNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="uk">Univeritas Klabat adalah pusat pendidikan tinggi yang didirikan oleh Gereja Masehi Advent Hari Ketujuh untuk menyediakan mahasiswa bagi pelayanan di Indonesia dan tempat lainnya.</p>
             </article>
         </section>
-        <hr>
+        
 
 
         <section id="our-profile">
@@ -43,26 +45,100 @@
             <article class="artic">
                 <div class="profile">
                     <div class="profile-icon profile-1"></div>
-                    <p>Profile 1</p>
+                    <p><a href="https://www.unklab.ac.id/tentang-unklab/#:~:text=Univeritas%20Klabat%20adalah%20pusat%20pendidikan,di%20Indonesia%20dan%20tempat%20lainnya.">Universitas Klabat</a></p> <br>
                 </div>
 
                 <div>
                     <div class="profile-icon profile-2"></div>
-                    <p>Profile 2</p>
+                    <p><a href="https://www.unklab.ac.id/fakultas-ilmu-komputer/">FIK</a></p>
                 </div>
 
                 <div>
                     <div class="profile-icon profile-3"></div>
-                    <p>Profile 3</p>
+                    <p><a href="https://web.facebook.com/vocs07/?_rdc=1&_rdr">VOCS</a></p>
                 </div>
                 <div class="devider"></div>
             </article>
         </section>
+        <!-- <hr> -->
+
+        <!-- portofolio -->
+        <section id="portofolio">
+
+            <div class="aboutme">
+                <h2>ABOUT ME</h2>
+            </div>
+
+            <article>
+                <div>
+                    <p class="nama"><b>Elshaddai Tambuwun</b></p>
+                    <img src="assets/img porto.jpg" class="elsha">
+                    <fieldset>
+                        <legend><h3>Profile</h3></legend>
+                        <p class="desc">Saya adalah mahasiswi Fakultas Ilmu Komputer, Jurusan Informatika di Universitas Klabat. Saat ini, saya akan memasuki semester 5 dengan Indeks Prestasi Kumulatif (IPK) terakhir sebesar 3.61. Selama menjalani studi di Universitas Klabat, saya telah mengembangkan keterampilan di bidang Web dengan mempelajari HTML dan CSS. Saya akan selalu bersemangat untuk mempelajari teknologi baru dan mencari solusi kreatif untuk masalah yang kompleks. Saya berharap dapat berkontribusi lebih dalam di bidang teknologi informasi dan terus mengembangkan diri saya melalui berbagai pengalaman praktis dan profesional.</p>
+                    </fieldset>
+                    <fieldset>
+                        <legend><h3>Project</h3></legend>
+                        <p class="desc">Project pertama yang saya buat adalah sebuah website portofolio, yang bisa anda <a href="">cek disini</a>. Website ini adalah final project yang saya kerjakan, dibuat hanya dengan menggunakan HTML dan CSS. Website ini berisi deskripsi personal tentang kelompok saya. Saya berharap website ini dapat memberikan gambaran yang jelas tentang kemampuan dan pengalaman dalam pengembangan web.</p>
+                    </fieldset>
+                    <fieldset>
+                        <legend><h3>Contact Me</h3></legend>
+                        <p class="desc">email : elshatambuwun20@gmail.com</p>
+                    </fieldset>
+                </div>
+            </article>
+        </section> 
+        <hr>
 
 
-        <section>
-            
+        <section id="message-us">
+            <article>
+                <header>
+                    <h1>Message Us</h1>
+                </header>
+                <form name="message-form" onsubmit="return validateForm()" id="message-form">
+                    <table>
+                        <tr>
+                            <td>Nama</td>
+                            <td>:</td>
+                            <td><input required type="text" name="name-input"placeholder="Nama" id="name-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Lahir</td>
+                            <td>:</td>
+                            <td><input type="date" name="tanggal" placeholder="Date" id="tanggal"></td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Kelamin</td>
+                            <td>:</td>
+                            <td>
+                                <label><input type="radio" name="gender" value="laki-laki" id="male"> Laki-Laki</label>
+                                <label><input type="radio" name="gender" value="perempuan" id="female"> Perempuan</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pesan">Pesan</td>
+                            <td class="pesan">:</td>
+                            <td><textarea class="pesan" placeholder="Pesan" id="pesan"></textarea></td>
+                        </tr>
+                        
+                            
+                    </table>
+                    <div class="output">
+                        <table>
+                            <p>Nama: <span id="sender-full-name"></span></p>
+                            <p>Tanggal Lahir: <span id="sender-birth-date"></span></p>
+                            <p>Jenis Kelamin: <span id="sender-gender"></span></p>
+                            <p>Pesan: <span id="sender-message"></span></p>
+                        </table>
+                    </div>
+                    <button type="submit" class="submit" id="submit">Submit</button>
+                    <p id="error-name"></p>
+                </form>
+            </article>
         </section>
     </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
